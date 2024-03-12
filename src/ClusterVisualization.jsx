@@ -20,6 +20,8 @@ const ClusterVisualization = () => {
             ticklen: 5,
             zeroline: false,
         },
+        width: 800,
+        height: 600,
     };
 
     return <Plot data={data} layout={layout} />;
