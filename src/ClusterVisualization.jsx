@@ -4,7 +4,8 @@ import getClusterData from './GetClusterData';
 
 const ClusterVisualization = () => {
 
-    const data = getClusterData('http://localhost:5000/get-data');
+    const apiUrl = import.meta.env.VITE_APP_API_URL;
+    const data = getClusterData(apiUrl);
     console.log(data);
 
     const layout = {
