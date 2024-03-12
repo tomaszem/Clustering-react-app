@@ -1,13 +1,25 @@
-// App.jsx
 import React from 'react';
-import ClusterVisualization from './ClusterVisualization'; // Cesta k souboru ClusterVisualization.jsx
+import ClusterVisualization from './ClusterVisualization';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Menu from './Menu'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import FileUploadForm from './Upload';
 
 function App() {
   return (
-    <div>
-      <h1>Cluster Visualization</h1>
-      <ClusterVisualization />
-    </div>
+    <>
+      <Router>
+        <div>
+          <Menu />
+          <Routes>
+            <Route path="/" element={<ClusterVisualization />} />
+            <Route path="/todo-1" element={<FileUploadForm />} />
+            <Route path="/todo-2" element={<ClusterVisualization />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
