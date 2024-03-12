@@ -14,7 +14,7 @@ function App() {
           <Menu />
           <Routes>
             <Route path="/" element={<ClusterVisualization />} />
-            <Route path="/todo-1" element={<FileUploadForm />} />
+            <Route path="/uploads" element={<FileUploadForm />} />
             <Route path="/todo-2" element={<ClusterVisualization />} />
           </Routes>
         </div>
