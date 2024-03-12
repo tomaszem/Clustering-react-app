@@ -1,23 +1,23 @@
-# Základní obraz - Node.js
+# Base image - Node.js
 FROM node:20.9.0
 
-# Nastaví pracovní adresář v kontejneru
+# Sets the working directory in the container
 WORKDIR /app
 
-# Kopíruje soubory package.json a package-lock.json
+# Copies package.json and package-lock.json files
 COPY package*.json ./
 
-# Instaluje závislosti projektu
+# Installs project dependencies
 RUN npm install
 
-# Kopíruje zbytek aplikace do kontejneru
+# Copies the rest of the application into the container
 COPY . .
 
-# Sestaví aplikaci
+# Builds the application
 RUN npm run build
 
-# Instaluje globálně http-server pro spuštění sestavené aplikace
+# Installs http-server globally to serve the built application
 RUN npm install -g http-server
 
-# Spustí http-server na portu 80
+# Starts the http-server
 CMD ["http-server", "dist", "-p", "3000"]
