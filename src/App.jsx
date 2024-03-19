@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './Menu'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import FileUploadForm from './Upload';
+import SettingsUI from './SettingsUI';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ClusterVisualization />} />
             <Route path="/uploads" element={<FileUploadForm />} />
-            <Route path="/todo-2" element={<ClusterVisualization />} />
+            <Route path="/settings" element={<SettingsUI />} />
           </Routes>
         </div>
       </Router>
