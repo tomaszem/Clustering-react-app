@@ -6,6 +6,7 @@ import Menu from './Menu'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import FileUploadForm from './Upload';
 import SettingsUI from './SettingsUI';
+import KnowledgeGraph from './KnowledgeGraph';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Menu />
           <Routes>
             <Route path="/" element={<ClusterVisualization />} />
+            <Route path="/knowledge-graph" element={<KnowledgeGraph />} />
             <Route path="/uploads" element={<FileUploadForm />} />
             <Route path="/settings" element={<SettingsUI />} />
           </Routes>

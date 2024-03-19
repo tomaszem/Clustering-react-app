@@ -36,6 +36,9 @@ const Menu = () => {
               <NavLink className="nav-link" activeClassName="active" to="/" onClick={closeNav}>Clustering</NavLink>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" to="/knowledge-graph" onClick={closeNav}>Knowledge graph</NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" activeClassName="active" to="/uploads" onClick={closeNav}>Uploads</NavLink>
             </li>
             <li className="nav-item">
