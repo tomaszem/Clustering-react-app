@@ -20,7 +20,7 @@ const EpsRangeDisplay = () =>  {
 
   return (
     <div>
-      <h2>Eps Range Data</h2>
+      <h4>Eps Range Data</h4>
       <p>Start Eps: {epsData.start_eps}</p>
       <p>End Eps: {epsData.end_eps}</p>
     </div>

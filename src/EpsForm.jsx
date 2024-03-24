@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/settings.css'
 
 const EpsForm = () => {
   const [eps, setEps] = useState('');
@@ -41,16 +42,16 @@ const EpsForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-inline justify-content-center mt-4">
+    <form onSubmit={handleSubmit} className="form-inline justify-content-center mt-4 eps-form">
       <div className="form-group mx-sm-3 mb-2">
-        <label htmlFor="epsInput" className="sr-only">EPS Value:</label>
+        <label htmlFor="epsInput" className="sr-only">Enter EPS Value:</label>
         <input
           id="epsInput"
           type="text"
           className="form-control"
           value={eps}
           onChange={e => setEps(e.target.value)}
-          placeholder="Enter EPS value"
+          placeholder="EPS value"
         />
       </div>
       <button type="submit" className="btn btn-primary mb-2">Submit</button>
