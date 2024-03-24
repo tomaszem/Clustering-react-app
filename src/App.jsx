@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import FileUploadForm from './Upload';
 import SettingsUI from './SettingsUI';
 import KnowledgeGraph from './KnowledgeGraph';
+import ClusterDetail from './ClusterDetail'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Menu />
           <Routes>
             <Route path="/" element={<ClusterVisualization />} />
+            <Route path="/cluster-detail" element={<ClusterDetail />} />
             <Route path="/knowledge-graph" element={<KnowledgeGraph />} />
             <Route path="/uploads" element={<FileUploadForm />} />
             <Route path="/settings" element={<SettingsUI />} />
