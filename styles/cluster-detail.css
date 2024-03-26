@@ -1,0 +1,8 @@
+.abstract-container {
+  min-width: 200px;
+}
+
+.cluster-chart {
+  width: 600px;
+  height: 400px;
+}
