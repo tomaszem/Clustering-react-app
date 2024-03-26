@@ -1,13 +1,13 @@
 import React from 'react';
 import ClusterVisualization from './ClusterVisualization';
-import './App.css'
+import '../styles/app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Menu from './Menu'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Menu from './Menu';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FileUploadForm from './Upload';
 import SettingsUI from './SettingsUI';
 import KnowledgeGraph from './KnowledgeGraph';
-import ClusterDetail from './ClusterDetail'
+import ClusterDetail from './ClusterDetail';
 
 function App() {
   return (
