@@ -1,4 +1,3 @@
-// useClusterData.js
 import { useState, useEffect } from 'react';
 
 const getClusterData = (apiUrl) => {
