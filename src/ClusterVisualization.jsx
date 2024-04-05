@@ -1,26 +1,38 @@
-import React from 'react';
-import Plot from 'react-plotly.js';
-import getClusterData from './GetClusterData';
+import React from "react";
+import Plot from "react-plotly.js";
+import getClusterData from "./GetClusterData";
 
 const ClusterVisualization = () => {
     const apiUrl = `${import.meta.env.VITE_APP_API_URL}/get-data`;
     const data = getClusterData(apiUrl);
-    console.log(data);
 
     const layout = {
-        title: 'Visualizing Clusters in Two Dimensions',
-        xaxis: {
-            title: 'PC1',
-            ticklen: 5,
-            zeroline: false,
+        title: "Visualizing Clusters in Three Dimensions",
+        scene: {
+            xaxis: { title: "PC1" },
+            yaxis: { title: "PC2" },
+            zaxis: { title: "PC3" },
+            aspectmode: "manual",
+            aspectratio: {
+                x: 2,
+                y: 1,
+                z: 1,
+            },
+            camera: {
+                eye: { x: 1.25, y: 1.65, z: 1.3 },
+                center: { x: 0, y: 0, z: 0 },
+                up: { x: 0, y: 0, z: 1 },
+            },
         },
-        yaxis: {
-            title: 'PC2',
-            ticklen: 5,
-            zeroline: false,
-        },
-        width: 800,
+        width: 1000,
         height: 600,
+        margin: {
+            l: 0,
+            r: 0,
+            b: 50,
+            t: 25,
+            pad: 4,
+        },
     };
 
     return <Plot data={data} layout={layout} />;
