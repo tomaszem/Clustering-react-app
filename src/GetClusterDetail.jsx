@@ -14,7 +14,7 @@ const getClusterDetail = (apiUrl) => {
         }
         const jsonData = await response.json();
         setData(jsonData);
-        const uniqueClusters = [...new Set(jsonData.map(item => item.cluster))].sort();
+        const uniqueClusters = [...new Set(jsonData.map(item => item.final_cluster))].sort();
         setClusters(uniqueClusters);
         setSelectedCluster(uniqueClusters[0]);
       } catch (error) {

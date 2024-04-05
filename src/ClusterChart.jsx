@@ -6,10 +6,10 @@ import { options } from './ChartOptions';
 const ClusterChart = ({ data, selectedCluster, onPointClick }) => {
   const chartData = {
     datasets: [{
-      label: 'Cluster Points',
-      data: data.filter(item => item.cluster === Number(selectedCluster)).map(item => ({
-        x: item.x,
-        y: item.y,
+      label: `Cluster Points ${selectedCluster}`,
+      data: data.filter(item => item.final_cluster === Number(selectedCluster)).map(item => ({
+        x: item.x_2d,
+        y: item.y_2d,
         articleTitle: item.filename,
       })),
       backgroundColor: 'rgba(54, 162, 235, 1)',

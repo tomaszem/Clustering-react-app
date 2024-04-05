@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import getClusterDetail from './GetClusterDetail';
 import ClusterSelect from './ClusterSelect';
 import ClusterChart from './ClusterChart';
-import '../styles/cluster-detail.css'
+import '../styles/cluster-detail.css';
 
 const ClusterDetail = () => {
   const apiUrl = `${import.meta.env.VITE_APP_API_URL}/get-data`;
