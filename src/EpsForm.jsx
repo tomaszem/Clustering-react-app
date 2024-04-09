@@ -11,7 +11,7 @@ const EpsForm = () => {
     const epsValue = parseFloat(eps);
 
     if (!isNaN(epsValue)) {
-      const apiUrl = 'http://localhost:5000/submit-eps';
+      const apiUrl = `${import.meta.env.VITE_APP_API_URL}/submit-eps`;
 
       fetch(apiUrl, {
         method: 'POST',

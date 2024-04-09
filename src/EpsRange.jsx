@@ -8,7 +8,7 @@ const EpsRangeDisplay = () =>  {
   });
 
   useEffect(() => {
-    const url = 'http://localhost:5000/get-eps-range';
+    const url = `${import.meta.env.VITE_APP_API_URL}/get-eps-range`;
     
     fetch(url)
       .then(response => response.json())
