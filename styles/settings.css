@@ -4,6 +4,16 @@
   align-items: flex-end;
 }
 
+.settings-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.settings-components {
+  flex: 1;
+  padding: 20px;
+}
+
 .settings-menu {
   width: 20%;
   padding: 20px;
@@ -17,4 +27,14 @@
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
+}
+
+.settings-menu > h3 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.settings-menu ul {
+  list-style-type: none;
+  padding: 0px;
 }
