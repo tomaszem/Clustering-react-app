@@ -8,8 +8,11 @@ const getClusterData = (apiUrl) => {
             .then(response => response.json())
             .then(data => {
                 const clusters = {};
-                data.forEach(point => {
-                    const { initial_cluster, x_3d, y_3d, z_3d, filename } = point;
+                data.metadatas.forEach(metadata => {
+                    const { initial_clusters, reduced_vectors_3d, document } = metadata;
+                    const [axis] = JSON.parse(reduced_vectors_3d);
+                    const initial_cluster = JSON.parse(initial_clusters)[0];
+    
                     if (!clusters[initial_cluster]) {
                         clusters[initial_cluster] = {
                             x: [],
@@ -23,10 +26,10 @@ const getClusterData = (apiUrl) => {
                             hoverinfo: 'text',
                         };
                     }
-                    clusters[initial_cluster].x.push(x_3d);
-                    clusters[initial_cluster].y.push(y_3d);
-                    clusters[initial_cluster].z.push(z_3d);
-                    clusters[initial_cluster].text.push(`${filename}`);
+                    clusters[initial_cluster].x.push(axis[0]);
+                    clusters[initial_cluster].y.push(axis[1]);
+                    clusters[initial_cluster].z.push(axis[2]);
+                    clusters[initial_cluster].text.push(document);
                 });
 
                 setData(Object.values(clusters));
