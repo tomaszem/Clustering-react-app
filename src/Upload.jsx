@@ -41,7 +41,7 @@ function FileUploadForm() {
 
   return (
     <div>
-      <h3>Upload your PDF documents in the section below</h3>
+      <h3 className="mt-4">Upload your PDF documents in the section below</h3>
       <form onSubmit={handleSubmit} className="container mt-5">
         <div className="form-group row">
           <div className="col-sm-12 mb-4">
