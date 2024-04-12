@@ -44,7 +44,7 @@ const EpsForm = () => {
   return (
     <form onSubmit={handleSubmit} className="form-inline justify-content-center mt-4 eps-form">
       <div className="form-group mx-sm-3 mb-2">
-        <label htmlFor="epsInput" className="sr-only">Enter EPS Value:</label>
+        <label htmlFor="epsInput" className="sr-only">Enter custom EPS value:</label>
         <input
           id="epsInput"
           type="text"
