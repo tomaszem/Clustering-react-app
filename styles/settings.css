@@ -3,3 +3,18 @@
   justify-content: space-evenly;
   align-items: flex-end;
 }
+
+.settings-menu {
+  width: 20%;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.settings-menu ul > li {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
