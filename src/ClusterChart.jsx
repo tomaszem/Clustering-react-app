@@ -30,7 +30,7 @@ const ClusterChart = ({ data, selectedCluster, onPointClick }) => {
   };
 
   return (
-    <div class="cluster-chart">
+    <div className="cluster-chart">
       <Scatter data={chartData} options={extendedOptions} />
     </div>
   );
