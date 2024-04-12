@@ -33,19 +33,19 @@ const Menu = () => {
         <div className={`collapse navbar-collapse ${isNavExpanded ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/" onClick={closeNav}>Clustering</NavLink>
+              <NavLink to="/" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} onClick={closeNav}>Clustering</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/cluster-detail" onClick={closeNav}>Cluster Detail</NavLink>
+              <NavLink to="/cluster-detail" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} onClick={closeNav}>Cluster Detail</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/knowledge-graph" onClick={closeNav}>Knowledge graph</NavLink>
+              <NavLink to="/knowledge-graph" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} onClick={closeNav}>Knowledge graph</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/uploads" onClick={closeNav}>Uploads</NavLink>
+              <NavLink to="/uploads" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} onClick={closeNav}>Uploads</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/settings" onClick={closeNav}>Settings</NavLink>
+              <NavLink to="/settings" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} onClick={closeNav}>Settings</NavLink>
             </li>
           </ul>
         </div>
