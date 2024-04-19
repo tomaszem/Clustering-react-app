@@ -10,12 +10,17 @@ This React application provides a dynamic visualization of clustering data using
 
 ## Prerequisites
 
-Before running this project, make sure you have the following installed:
-- Node.js (https://nodejs.org/)
-- npm (comes with Node.js)
-- A running Flask API server that provides the cluster data.
+### Local Development
 
-## Installation
+To run this project locally without Docker, follow these steps:
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and install the required npm packages:
+```bash
+$ npm install
+```
+
+## Docker Development
+### Installation
 Build the Image using the following command:
 
 ```bash
