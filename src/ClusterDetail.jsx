@@ -7,7 +7,7 @@ import '../styles/cluster-detail.css';
 const ClusterDetail = () => {
   const apiUrl = `${import.meta.env.VITE_APP_API_URL}/get-data`;
   const { data, clusters, selectedCluster, setSelectedCluster } = getClusterDetail(apiUrl);
-  const [selectedArticleTitle, setSelectedArticleTitle] = useState('');
+  const [selectedDocument, setSelectedDocument] = useState({ title: '', abstract: '' });
 
   return (
     <div className="container mt-3">
@@ -27,15 +27,15 @@ const ClusterDetail = () => {
                 <ClusterChart
                   data={data}
                   selectedCluster={selectedCluster}
-                  onPointClick={setSelectedArticleTitle}
+                  onPointClick={(document) => setSelectedDocument(document)}
                 />
               )}
             </div>
             <div className="align-self-start abstract-container">
-              {selectedArticleTitle && (
+              {selectedDocument.title && (
                 <>
-                  <h4>Abstract</h4>
-                  <p>{selectedArticleTitle}</p>
+                  <h4>{selectedDocument.title}</h4>
+                  <p>{selectedDocument.abstract}</p>
                 </>
               )}
             </div>
