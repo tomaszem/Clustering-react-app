@@ -13,8 +13,20 @@ const getClusterDetail = (apiUrl) => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const jsonData = await response.json();
-        setData(jsonData);
-        const uniqueClusters = [...new Set(jsonData.map(item => item.final_cluster))].sort();
+        const data = jsonData.metadatas;
+  
+        // Map through the data
+        const processedData = data.map(item => ({
+          ...item,
+          title: item.title,
+          abstract: item.abstract,
+          final_cluster: JSON.parse(item.final_clusters)[0],
+          reduce_vectors_2d: JSON.parse(item.reduce_vectors_2d),
+        }));
+  
+        setData(processedData);
+
+        const uniqueClusters = [...new Set(processedData.map(item => item.final_cluster))].sort((a, b) => a - b);
         setClusters(uniqueClusters);
         setSelectedCluster(uniqueClusters[0]);
       } catch (error) {
