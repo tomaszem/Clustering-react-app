@@ -9,11 +9,15 @@ const KnowledgeGraph = () => {
 
   return (
     <div>
-      <select value={selectedCluster} onChange={e => setSelectedCluster(Number(e.target.value))}>
-        {clusters.map(cluster => (
-          <option key={cluster} value={cluster}>{`Cluster ${cluster}`}</option>
-        ))}
-      </select>
+      <div className="row justify-content-center my-3">
+        <div className="col-3">
+          <select className="form-select" value={selectedCluster} onChange={e => setSelectedCluster(Number(e.target.value))}>
+            {clusters.map(cluster => (
+              <option key={cluster} value={cluster}>{`Cluster ${cluster}`}</option>
+            ))}
+          </select>
+        </div>
+      </div>
       <ForceGraph2D
         graphData={graphData}
         nodeAutoColorBy="group"
@@ -32,7 +36,7 @@ const KnowledgeGraph = () => {
           ctx.fillStyle = node.color;
           ctx.fillText(label, node.x, node.y);
 
-          // to re-use in nodePointerAreaPaint
+          // Re-use in nodePointerAreaPaint
           node.__bckgDimensions = bckgDimensions;
         }}
         nodePointerAreaPaint={(node, color, ctx) => {
