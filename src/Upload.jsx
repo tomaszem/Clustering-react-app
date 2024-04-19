@@ -2,14 +2,13 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
 function FileUploadForm() {
-  const apiUrl = import.meta.env.VITE_APP_API_URL + '/upload';
+  const apiUrl = import.meta.env.VITE_APP_API_URL + '/upload-pdf';
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('');
-  const fileInputRef = useRef(null); // Reference to reset the file input
+  const fileInputRef = useRef(null);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
-    // Clear any existing status messages when a new file is selected
     setUploadStatus('');
   };
 
@@ -29,10 +28,10 @@ function FileUploadForm() {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('File uploaded successfully:', response.data);
+      console.log(response.data);
       setUploadStatus('File uploaded successfully.');
-      setSelectedFile(null); // Reset selected file state
-      fileInputRef.current.value = null; // Reset file input
+      setSelectedFile(null);
+      fileInputRef.current.value = null;
     } catch (error) {
       console.error('Error uploading file:', error);
       setUploadStatus('Error uploading file. Please try again.');
@@ -50,7 +49,7 @@ function FileUploadForm() {
               className="form-control-file"
               onChange={handleFileChange}
               accept="application/pdf"
-              ref={fileInputRef} // Attach the ref to the file input
+              ref={fileInputRef}
             />
           </div>
         </div>
