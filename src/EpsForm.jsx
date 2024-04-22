@@ -27,7 +27,7 @@ const EpsForm = () => {
         return response.json();
       })
       .then(data => {
-        setMessage("EPS value submitted successfully!");
+        setMessage("Value submitted successfully!");
         setIsError(false);
         setEps('');
       })
@@ -42,6 +42,7 @@ const EpsForm = () => {
   };
 
   return (
+    <div>
     <form onSubmit={handleSubmit} className="form-inline justify-content-center mt-4 eps-form">
       <div className="form-group mx-sm-3 mb-2">
         <label htmlFor="epsInput" className="sr-only">Enter custom EPS value:</label>
@@ -55,12 +56,9 @@ const EpsForm = () => {
         />
       </div>
       <button type="submit" className="btn btn-primary mb-2">Submit</button>
-      {message && (
-        <div className={`alert ${isError ? 'alert-danger' : 'alert-success'}`} role="alert">
-          {message}
-        </div>
-      )}
     </form>
+    {message && <p>{message}</p>}
+    </div>
   );
 }
 
