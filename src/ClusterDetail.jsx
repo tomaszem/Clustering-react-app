@@ -23,13 +23,11 @@ const ClusterDetail = () => {
 
           <div className="d-flex">
             <div className="me-3">
-              {selectedCluster && (
-                <ClusterChart
-                  data={data}
-                  selectedCluster={selectedCluster}
-                  onPointClick={(document) => setSelectedDocument(document)}
-                />
-              )}
+              <ClusterChart
+                data={data}
+                selectedCluster={selectedCluster}
+                onPointClick={(document) => setSelectedDocument(document)}
+              />
             </div>
             <div className="align-self-start abstract-container">
               {selectedDocument.title && (
